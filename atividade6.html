@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Modelo de uso do MathJax (HTML+Latex)</title>
+  <title>Atividade 06</title>
   <style>
     .code-container {
             background-color: #4c3855;
@@ -44,7 +44,7 @@ font-size: 20px;">
     <p><strong>Questão 1.</strong>  
         Considere o grafo abaixo:        
     </p>
-    <p><img src="g2.png" /></p>
+    <p><img src="https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2.png?raw=true" /></p>
     <p>
       Um teste de mesa consiste em executar manualmente os passos do algoritmo, 
       anotando os estados das variáveis ao longo da execução. 
@@ -64,7 +64,7 @@ font-size: 20px;">
       <p><strong>Questão 2.</strong> 
         Considere o grafo abaixo:
       </p>
-      <p><img src="g3.png" /></p>
+      <p><img src="https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g3.png?raw=true" /></p>
       <p>
         <ol>
           <li>
@@ -95,10 +95,55 @@ font-size: 20px;">
     
     </ul>
 
+<div style="border-top: dotted; border-color:rgb(168, 137, 185) ; margin-top: 4rem;">
+<h1 style="text-align: center;">Respostas</h1>
 
+<h2>Questão 1</h2>
+
+<p>Para este primeiro problema, iremos representar por cores, sendo a mais clara não explorado, 
+    a um pouco escura que foi explorado parcialmente e a totalmente escura siginifica que foi explorado
+     totalmente. <br>
+    Temos também a fila \(Q\), que é a fila de ordem de exploração dos vértices. O teste de mesa 
+    será representado visualmente a cada passo. Possa ser que alguns passos sejam pulados, mas a 
+    ideia do algoritmo será a mesma. 
+</p>
+
+<button id="btn-anterior" onclick="anterior()">Anterior</button>
+<button id="btn-proximo" onclick="proximo()">Próximo</button>
+<br>
+
+<img id="img1" src="https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g3.png?raw=true" alt="">
   
 
 </div>
+
+
+<script>
+    const imagem = document.getElementById('img1');
+    var passo_atual = 0;
+    const exibirPasso = (passo) => {
+        console.log(passo_atual);
+        if (passo_atual > 0){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2.png?raw=true"
+        }
+        if (passo_atual == 0){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g3.png?raw=true"
+        }
+    }
+
+    const anterior = () =>{
+        if (passo_atual > 0){
+            passo_atual--;
+            exibirPasso(passo_atual);
+        }
+    }
+
+    const proximo = () => {
+        passo_atual++;
+        exibirPasso(passo_atual);
+    }
+
+</script>
 
 </body>
 </html>
