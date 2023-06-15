@@ -20,6 +20,37 @@
         color: #ffffff;
     }
 
+    .button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6f2779;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo do botão de "Próximo" */
+.next-button {
+  margin-left: 10px;
+}
+
+.next-button:hover {
+  background-color: #8c7dcc;
+}
+
+/* Estilo do botão de "Anterior" */
+.prev-button {
+  margin-right: 10px;
+}
+
+.prev-button:hover {
+  background-color: #8c7dcc;
+}
+
 </style>
 
   <!-- MATHJAX 3 (através da CDN) -->
@@ -98,28 +129,47 @@ font-size: 20px;">
 <div style="border-top: dotted; border-color:rgb(168, 137, 185) ; margin-top: 4rem;">
 <h1 style="text-align: center;">Respostas</h1>
 
-<h2>Questão 1</h2>
+<h3>Atenção</h3>
 
-<p>Para este primeiro problema, iremos representar por cores, sendo a mais clara não explorado, 
-    a um pouco escura que foi explorado parcialmente e a totalmente escura siginifica que foi explorado
-     totalmente. <br>
-    Temos também a fila \(Q\), que é a fila de ordem de exploração dos vértices. O teste de mesa 
-    será representado visualmente a cada passo. Possa ser que alguns passos sejam pulados, mas a 
-    ideia do algoritmo será a mesma. 
+<p>
+    Para corrigir as questões, esteja conectado à Internet, pois será necessário para a visualização 
+    das imagens. Resolvi o teste de mesa de maneira visual.
 </p>
 
-<button id="btn-anterior" onclick="anterior()">Anterior</button>
-<button id="btn-proximo" onclick="proximo()">Próximo</button>
-<br>
+<h2>Questão 1</h2>
 
-<img id="img1" src="https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-1-1.png?raw=true" alt="">
-  
-<br><br><br>
+<p>Para este primeiro problema, iremos representar por cores, sendo a mais clara, explorado parcialmente, 
+    e a totalmente escura siginifica que foi explorado totalmente. <br>
+    Temos também a fila \(Q\), que é a fila de ordem de exploração dos vértices. O teste de mesa 
+    será representado visualmente a cada passo. Possa ser que alguns passos sejam pulados, mas a 
+    ideia do algoritmo será a mesma. <br><br>
+    Clique nos botões para avançar ou retrodecer no passo-a-passo. 
+</p>
+<div style="display: flex; justify-content: center;">
+    <button class="button prev-button"id="btn-anterior" onclick="anterior()">Anterior</button>
+    <button class="button next-button" id="btn-proximo" onclick="proximo()">Próximo</button>
+</div>
+
+<br> <br> <br>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img id="img1" 
+ src="https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-1-1.png?raw=true" alt="">
+</div>
+<br><br><br> <br><br>
+<p>
+    Temos então que, o vetor de distancia e predecessor, considerando que cada posição está relacionado 
+    com a letra em ordem alfabética(A,B,C,D,E,F,G,H,I,P), são: <br>
+    <br>
+    \(d\) = [0,1,2,3,4,5,6,5,5,4,4,3,3,2,1]      <strong>OBS: A última posição está relacionada ao vértice P.</strong> <br>
+    <br>
+    \(|\pi|\) = [NIL, A, B, C, D, E, I, J, K, M, L, C, P, A]
+</p>
 
 </div>
 
 
 <script>
+    //Se voce chegou ate aqui, releve o codigo, nao foi bem escrito
     const imagem = document.getElementById('img1');
     var passo_atual = 0;
     const exibirPasso = (passo) => {
@@ -142,9 +192,41 @@ font-size: 20px;">
         if (passo_atual == 5){
             imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-7.png?raw=true"
         }
+        if (passo_atual == 6){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-8.png?raw=true"
+        }
+        if (passo_atual == 7){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-9.png?raw=true"
+        }
+        if (passo_atual == 8){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-10.png?raw=true"
+        }
+        if (passo_atual == 9){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-11.png?raw=true"
+        }
+        if (passo_atual == 10){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-12.png?raw=true"
+        }
+        if (passo_atual == 11){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-13.png?raw=true"
+        }
+        if (passo_atual == 12){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-14.png?raw=true"
+        }
+        if (passo_atual == 13){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-15.png?raw=true"
+        }
+        if (passo_atual == 14){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-16.png?raw=true"
+        }
+        if (passo_atual == 15){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-17.png?raw=true"
+        }
+
     }
 
     const anterior = () =>{
+        
         if (passo_atual > 0){
             passo_atual--;
             exibirPasso(passo_atual);
@@ -152,8 +234,14 @@ font-size: 20px;">
     }
 
     const proximo = () => {
-        passo_atual++;
-        exibirPasso(passo_atual);
+        if (passo_atual == 16){
+            passo_atual = 15;
+            exibirPasso(passo_atual);
+        }
+        else{
+            passo_atual++;
+            exibirPasso(passo_atual);
+        }
     }
 
 </script>
