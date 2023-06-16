@@ -146,8 +146,8 @@ font-size: 20px;">
     Clique nos botões para avançar ou retrodecer no passo-a-passo. 
 </p>
 <div style="display: flex; justify-content: center;">
-    <button class="button prev-button"id="btn-anterior" onclick="anterior()">Anterior</button>
-    <button class="button next-button" id="btn-proximo" onclick="proximo()">Próximo</button>
+    <button class="button prev-button"id="btn-anterior" onclick="anterior1()">Anterior</button>
+    <button class="button next-button" id="btn-proximo" onclick="proximo1()">Próximo</button>
 </div>
 
 <br> <br> <br>
@@ -164,6 +164,30 @@ font-size: 20px;">
     <br>
     \(|\pi|\) = [NIL, A, B, C, D, E, I, J, K, M, L, C, P, A]
 </p>
+<br> <br>
+
+<h2>Questão 2.1</h2>
+
+<p>
+    Essa questão será semelhante a anterior, você poderá clicar nos botões para ver o teste de mesa do 
+    DFS. Em cada vértice estará salvo o seu tempo de descoberta e seu tempo de finalizado. Será 
+    começado no vértice 'a', exatamente como a questão pediu.<br>
+    <strong>Atenção:</strong> fiz essa questão começando pelo tempo 0. Nos slides do professor, é iniciado 
+    pelo tempo 1, mas isso não terá tanta influência. Considere apenas que cada nó está com um tempo a menos.
+
+</p>
+
+<div style="display: flex; justify-content: center;">
+    <button class="button prev-button"id="btn-anterior" onclick="anterior2()">Anterior</button>
+    <button class="button next-button" id="btn-proximo" onclick="proximo2()">Próximo</button>
+</div>
+
+    <br> <br> <br>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <img id="img2" 
+    src="https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-1.png?raw=true" alt="">
+    </div>
+    <br><br><br> <br><br>
 
 </div>
 
@@ -172,7 +196,8 @@ font-size: 20px;">
     //Se voce chegou ate aqui, releve o codigo, nao foi bem escrito
     const imagem = document.getElementById('img1');
     var passo_atual = 0;
-    const exibirPasso = (passo) => {
+    var passo_atual2 = 0;
+    const exibirPasso1 = () => {
         console.log(passo_atual);
         if (passo_atual == 0){
             imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-1-1.png?raw=true"
@@ -225,22 +250,95 @@ font-size: 20px;">
 
     }
 
-    const anterior = () =>{
+    const anterior1 = () =>{
         
         if (passo_atual > 0){
             passo_atual--;
-            exibirPasso(passo_atual);
+            exibirPasso1();
         }
     }
 
-    const proximo = () => {
+    const proximo1 = () => {
         if (passo_atual == 16){
             passo_atual = 15;
-            exibirPasso(passo_atual);
+            exibirPasso1();
         }
         else{
             passo_atual++;
-            exibirPasso(passo_atual);
+            exibirPasso1();
+        }
+    }
+
+
+    const exibirPasso2 = () => {
+        console.log(passo_atual2);
+        if (passo_atual2 == 0){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-1.png?raw=true"
+        }
+        if (passo_atual2 == 1){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-3.png?raw=true"
+        }
+        if (passo_atual2 == 2){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-4%20.png?raw=true"
+        }
+        if (passo_atual2 == 3){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/d1-5.png?raw=true"
+        }
+        if (passo_atual2 == 4){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-6.png?raw=true"
+        }
+        if (passo_atual2 == 5){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-7.png?raw=true"
+        }
+        if (passo_atual2 == 6){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-8.png?raw=true"
+        }
+        if (passo_atual2 == 7){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-9.png?raw=true"
+        }
+        if (passo_atual2 == 8){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-10.png?raw=true"
+        }
+        if (passo_atual2 == 9){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-11.png?raw=true"
+        }
+        if (passo_atual2 == 10){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-12.png?raw=true"
+        }
+        if (passo_atual2 == 11){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-13.png?raw=true"
+        }
+        if (passo_atual2 == 12){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-14.png?raw=true"
+        }
+        if (passo_atual2 == 13){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-15.png?raw=true"
+        }
+        if (passo_atual2 == 14){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-16.png?raw=true"
+        }
+        if (passo_atual2 == 15){
+            imagem.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-17.png?raw=true"
+        }
+
+    }
+
+    const anterior2 = () =>{
+        
+        if (passo_atual2 > 0){
+            passo_atual2--;
+            exibirPasso2();
+        }
+    }
+
+    const proximo2 = () => {
+        if (passo_atual2 == 16){
+            passo_atual2 = 15;
+            exibirPasso2();
+        }
+        else{
+            passo_atual2++;
+            exibirPasso2();
         }
     }
 
