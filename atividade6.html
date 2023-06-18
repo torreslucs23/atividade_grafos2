@@ -189,6 +189,61 @@ font-size: 20px;">
     </div>
     <br><br><br> <br><br>
 
+    <p>
+        temos que, em ordem alfabética, o vetor de precedência é: <br>
+        \(\pi\) = [Nil,a,Nill,a,b,d,Nill,f,e,g,e,h] <br><br>
+
+        <strong>Atenção: </strong> eu esqueci de pontilhar o caminho de l até k, porém não tem problema, 
+        pois não irá alterar o resultado final. Além disso, esqueci de pintar o caminho g até j. <br><br>
+    </p>
+
+    <h2>Questão 2.2</h2>
+
+    <p>
+        Para responder essa questão, o professor permitiu mostrar os resultados finais e como 
+        foi chegado neles, sem precisar fornecer todo o teste de mesa. 
+        <br>
+        Temos o seguinte pseudocódido para encontrar um componentes fortemente conexas em um grafo: <br>
+
+    </p>
+
+    <div class="code-container">
+    <pre><code>
+        Componentes-fortemente-conexas(G):
+        1 execute DFS(G) e calcule f [v] para cada v ∈ V
+        2 compute GT
+        3 execute DFS(GT), mas no laco principal de DFS, considere 
+        os vertices em ordem decrescente de f [v]
+        4 devolva os conjuntos de vértices 
+        de cada árvore da floresta de busca encontrada
+    </code></pre>
+  </div>
+
+  <p>Como já encontramos o tempo de finalização de cada vértice na questão 2.1, iremos agora 
+    executar os passos restantes. <br>
+    Quando fazemos a transposta do grafo, teremos que os vértices que eram sorvedouros acabam se 
+    transformando em fonte, e vice-versa. Ao fazer a transposta do grafo, iremos pegar o vértice 
+    que tem o maior tempo de finalização, em ordem decrescente, e aplicaremos o DFS. Note que 
+    quando fazemos isso, estamos pegando a componente sorvedoura de um grafo mais amplo. <br><br>
+    Agora, reproduzindo passo-a-passo das componentes que o algoritmo encontrou, em ordem: <br>
+
+    1. g <br>
+    2. j <br>
+    3. c <br>
+    4. a <br>
+    5. d -> l -> h -> f <br>
+    6. b -> e -> k<br>
+    7. i <br>
+
+    <br>
+    Logo, temos que o vetor de parentes é, em ordem alfabética de posições: <br>
+    \(\pi\) = [nill, nill, nill, nill, b, h, nill, l, nill, nill, e, d ]
+
+  </p>
+
+    
+    
+
 </div>
 
 
@@ -292,35 +347,33 @@ font-size: 20px;">
             imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-6.png?raw=true"
         }
         if (passo_atual2 == 6){
-            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-8.png?raw=true"
+            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-7.png?raw=true"
         }
         if (passo_atual2 == 7){
-            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-9.png?raw=true"
+            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-8.png?raw=true"
         }
         if (passo_atual2 == 8){
-            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-10.png?raw=true"
+            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-9.png?raw=true"
         }
         if (passo_atual2 == 9){
-            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-11.png?raw=true"
+            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-10.png?raw=true"
         }
         if (passo_atual2 == 10){
-            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-12.png?raw=true"
+            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-11.png?raw=true"
         }
         if (passo_atual2 == 11){
-            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-13.png?raw=true"
+            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-12.png?raw=true"
         }
         if (passo_atual2 == 12){
-            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-14.png?raw=true"
+            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-13.png?raw=true"
         }
         if (passo_atual2 == 13){
-            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-15.png?raw=true"
+            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-14.png?raw=true"
         }
         if (passo_atual2 == 14){
-            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-16.png?raw=true"
+            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g2-15.png?raw=true"
         }
-        if (passo_atual2 == 15){
-            imagem2.src = "https://github.com/torreslucs23/atividade_grafos2/blob/main/A6/g1-17.png?raw=true"
-        }
+        
 
     }
 
@@ -333,8 +386,8 @@ font-size: 20px;">
     }
 
     const proximo2 = () => {
-        if (passo_atual2 == 16){
-            passo_atual2 = 15;
+        if (passo_atual2 == 15){
+            passo_atual2 = 14;
             exibirPasso2();
         }
         else{
